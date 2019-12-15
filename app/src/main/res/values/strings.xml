@@ -3,4 +3,64 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="internetConnectionLossMessage">Please check your Internet connection. Because a network connection is required to continuous functioning on this app. Pease turn on Wi-Fi or cellular data </string>
+
+
+    <string name="languageNotAvailable">Selected filtered language is not available in this repository.\nPlease select other languages for filter</string>
+    <string-array name="filterLanguageArray">
+        <item>Filter By language Java and Java Script</item>
+        <item>Filter By language Kotlin</item>
+        <item>Filter By language Dart</item>
+        <item>Filter By language Php</item>
+        <item>Filter By language Html</item>
+        <item>Filter By language Swift</item>
+        <item>Filter By language CSS</item>
+        <item>Filter By language C++</item>
+        <item>Filter By language oCaml</item>
+        <item>Filter By language Jupyter Networking</item>
+        <item>Filter By language  Type Script</item>
+        <item>Filter By language Crystal</item>
+        <item>Filter By language Ruby</item>
+        <item>Filter By language DockerFile</item>
+        <item>Filter By language Go</item>
+        <item>Filter By language Clojure</item>
+        <item>Filter By language C</item>
+        <item>Filter By language Asp</item>
+        <item>Filter By language MakeFile</item>
+        <item>Filter By language Python</item>
+        <item>Filter By language Shell</item>
+        <item>Filter By language Fortran</item>
+        <item>Filter By language Matlab</item>
+
+    </string-array>
+    <string-array name="languagesArray">
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>Dart</item>
+        <item>Php</item>
+        <item>Html</item>
+        <item>Swift</item>
+        <item>CSS</item>
+        <item>C++</item>
+        <item>oCaml</item>
+        <item>Networking</item>
+        <item>TypeScript</item>
+        <item>Crystal</item>
+        <item>Ruby</item>
+        <item>DockerFile</item>
+        <item>Go</item>
+        <item>Clojure</item>
+        <item>C</item>
+        <item>Asp</item>
+        <item>MakeFile</item>
+        <item>Python</item>
+        <item>Shell</item>
+        <item>Fortran</item>
+        <item>Matlab</item>
+    </string-array>
+
+    <string-array name="customDialogFilterArry">
+        <item>Filter By Language</item>
+        <item>Score By Ascending Order</item>
+    </string-array>
 </resources>

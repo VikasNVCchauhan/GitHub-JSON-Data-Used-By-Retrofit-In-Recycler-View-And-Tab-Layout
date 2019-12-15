@@ -10,9 +10,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.net.Uri;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Editable;
@@ -22,8 +19,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -39,15 +34,10 @@ import com.google.android.material.tabs.TabLayout;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.net.MalformedURLException;
-import java.net.NetworkInterface;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, TextWatcher, RecylerAdapterMain.onItemClickListener {
-
 
     //Widgets
     private RecyclerView recyclerViewUserDetail;
@@ -134,6 +124,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         listUserModelProfileDataNameAndProfileUrl.add(new UserModelProfileData(stringUserName, stringUserProfileURl, stringActualCount, arr[i]));
                     }
+
+
                     for (int i = 0; i < arr.length; i++) {
 
                         final int position = i;
@@ -148,8 +140,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     stringRepositoryCount = String.valueOf(jArray.length());
                                     listUserModelProfileData.add(new UserModelProfileData(listUserModelProfileDataNameAndProfileUrl.get(position).getStringUserName(),
                                             stringRepositoryCount,
-                                            listUserModelProfileDataNameAndProfileUrl.get(position).getStringUserProfileURl(), listUserModelProfileDataNameAndProfileUrl.get(position).getStringActualPosition(), listUserModelProfileDataNameAndProfileUrl.get(position).getStringRepoLink()));
-
+                                            listUserModelProfileDataNameAndProfileUrl.get(position).getStringUserProfileURl(),
+                                            listUserModelProfileDataNameAndProfileUrl.get(position).getStringActualPosition(),
+                                            listUserModelProfileDataNameAndProfileUrl.get(position).getStringRepoLink()));
                                 } catch (JSONException e) {
                                     linearLayoutProgressBar.setVisibility(View.INVISIBLE);
                                     e.printStackTrace();
@@ -164,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         });
                         requestQueue.add(request);
                     }
-                    CountDownTimer countDownTimer = new CountDownTimer(900, 100) {
+                    CountDownTimer countDownTimer = new CountDownTimer(1000, 100) {
                         @Override
                         public void onTick(long l) {
 
@@ -172,6 +165,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         @Override
                         public void onFinish() {
+                            System.out.println();
                             linearLayoutProgressBar.setVisibility(View.INVISIBLE);
                             recylerAdapterMain = new RecylerAdapterMain(listUserModelProfileData, MainActivity.this);
                             recyclerViewUserDetail.setAdapter(recylerAdapterMain);
@@ -277,7 +271,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         intent.putExtra("USER_POSITION_IN_JSON", ActualPosition);
         intent.putExtra("REPO_LINK", list.get(position).getStringRepoLink());
         intent.putExtra("REPO_COUNT", list.get(position).getStringRepositoryCount());
-        Toast.makeText(this, "" + list.get(position).getStringRepositoryCount(), Toast.LENGTH_SHORT).show();
         startActivity(intent);
 
     }

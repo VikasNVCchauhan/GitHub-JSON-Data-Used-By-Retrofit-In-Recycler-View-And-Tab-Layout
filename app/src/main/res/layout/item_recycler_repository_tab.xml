@@ -5,10 +5,10 @@
     android:id="@+id/linear_layout_item_recycler_activity"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="8dp"
-    android:layout_marginTop="3dp"
-    android:layout_marginRight="8dp"
-    android:layout_marginBottom="2dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginBottom="5dp"
     android:background="@drawable/background_layout"
     android:elevation="3dp"
     android:gravity="center"
@@ -30,7 +30,7 @@
         android:paddingBottom="3sp"
         android:text="flexbox-layout"
         android:textAlignment="center"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorSilver"
         android:textSize="17sp" />
 
     <LinearLayout
@@ -43,6 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Language : "
+            android:textColor="@color/textColorLightBlue"
             android:textSize="15sp" />
 
         <TextView
@@ -51,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10sp"
             android:text="JAVA"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textStyle="bold" />
 
         <TextView
@@ -59,6 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10sp"
             android:text="Score : "
+            android:textColor="@color/textColorLightBlue"
             android:textSize="15sp" />
 
         <TextView
@@ -66,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="300.0000"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -99,6 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3sp"
                 android:text="WATCHER."
+                android:textColor="@color/textColorLightBlue"
                 android:textSize="12.5sp" />
 
             <TextView
@@ -107,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3sp"
                 android:text="30"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="12.5sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -129,6 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3sp"
                 android:text="OPEN ISSUE."
+                android:textColor="@color/textColorLightBlue"
                 android:textSize="12.5sp" />
 
             <TextView
@@ -137,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3sp"
                 android:text="1K"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="12.5sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -158,6 +162,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3sp"
                 android:text="FORKS."
+                android:textColor="@color/textColorLightBlue"
                 android:textSize="12.5sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/text_view_forks_item_recycler_repository_tab"
@@ -168,7 +173,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3000"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="12.5sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"

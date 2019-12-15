@@ -11,6 +11,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.InsetDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Handler;
 import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,17 +28,20 @@ public class NetworkStateChangeReciever extends BroadcastReceiver implements Vie
     private NetworkInfo networkInfo;
     private AlertDialog alertDialog;
     private AlertDialog.Builder builder;
-    private TextView textViewCancel, textViewSetting;
+    private TextView textViewReload, textViewSetting;
     private AppCompatActivity appCompatActivity;
+    private Context context;
+    Intent intent1;
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        intent1 = intent;
         connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager != null) {
             builder = new AlertDialog.Builder(context);
             networkInfo = connectivityManager.getActiveNetworkInfo();
             if (networkInfo != null && networkInfo.isConnected()) {
-                if(alertDialog!=null){
+                if (alertDialog != null) {
                     alertDialog.dismiss();
                 }
             } else {
@@ -52,34 +56,49 @@ public class NetworkStateChangeReciever extends BroadcastReceiver implements Vie
 
                 builder.setView(view);
                 builder.setCancelable(false);
-                alertDialog=builder.show();
+                alertDialog = builder.show();
 
                 ColorDrawable back = new ColorDrawable(Color.TRANSPARENT);
                 InsetDrawable inset = new InsetDrawable(back, 40);
                 alertDialog.getWindow().setBackgroundDrawable(inset);
 
-                textViewCancel.setOnClickListener(this);
+                textViewReload.setOnClickListener(this);
                 textViewSetting.setOnClickListener(this);
             }
         }
     }
 
     private void setIdForALlWidgets(View view) {
-        textViewCancel = view.findViewById(R.id.text_view_cancel_alert_dialog);
+        textViewReload = view.findViewById(R.id.text_view_reload_alert_dialog);
         textViewSetting = view.findViewById(R.id.text_view_settings_alert_dialog);
     }
 
     @Override
     public void onClick(View view) {
-        if (view == textViewCancel) {
+        if (view == textViewReload) {
+            textViewReload.setTextColor(Color.WHITE);
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    textViewReload.setTextColor(Color.parseColor("#E1FF7800"));
+                }
+            }, 200);
 
-            alertDialog.dismiss();
-            //
-           // appCompatActivity.startActivity(new Intent(appCompatActivity, MainActivity.class));
-            Toast.makeText(appCompatActivity, "Working On It", Toast.LENGTH_SHORT).show();
+            Toast.makeText(appCompatActivity, "No Internet", Toast.LENGTH_SHORT).show();
+            // appCompatActivity.startActivity(new Intent(appCompatActivity, MainActivity.class));
+            //Toast.makeText(appCompatActivity, "Working On It", Toast.LENGTH_SHORT).show();
 
         } else if (view == textViewSetting) {
-            appCompatActivity.startActivity(new Intent(Settings.ACTION_SETTINGS));
+            textViewSetting.setTextColor(Color.WHITE);
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    textViewSetting.setTextColor(Color.parseColor("#E1FF7800"));
+                    appCompatActivity.startActivity(new Intent(Settings.ACTION_SETTINGS));
+                }
+            }, 200);
         }
     }
 }

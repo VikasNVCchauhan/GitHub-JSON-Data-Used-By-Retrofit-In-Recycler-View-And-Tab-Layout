@@ -42,7 +42,13 @@ public class TabRepositoryRecyclerAdapter extends RecyclerView.Adapter<TabReposi
 
     @Override
     public int getItemCount() {
-        return listUserModelRepository.size();
+        int size;
+        if (listUserModelRepository.size() < 6 || listUserModelRepository.size() > 6) {
+            size = listUserModelRepository.size();
+        } else {
+            size = 6;
+        }
+        return size;
     }
 
     class TabRepositoryHolder extends RecyclerView.ViewHolder {
@@ -51,8 +57,11 @@ public class TabRepositoryRecyclerAdapter extends RecyclerView.Adapter<TabReposi
 
         public TabRepositoryHolder(@NonNull View itemView) {
             super(itemView);
-
             setIdForAllWidgets(itemView);
+            if(getItemCount()==6){
+                textViewRepoName.setTextSize(14);
+            }
+
         }
 
         private void setIdForAllWidgets(View itemView) {

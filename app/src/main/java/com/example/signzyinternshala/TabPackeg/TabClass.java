@@ -49,7 +49,6 @@ public class TabClass extends AppCompatActivity implements TabLayout.BaseOnTabSe
         stringRepoLink = getIntent().getStringExtra("REPO_LINK");
         stringRepoCount=getIntent().getStringExtra("REPO_COUNT");
 
-        Toast.makeText(this, ""+stringUserPositionInJson, Toast.LENGTH_SHORT).show();
         mapUserData = new HashMap<>();
         mapUserData.put("ProfileUrl", stringProfileUrl);
         mapUserData.put("UserName", stringUserName);
@@ -80,8 +79,6 @@ public class TabClass extends AppCompatActivity implements TabLayout.BaseOnTabSe
     public void onTabSelected(TabLayout.Tab tab) {
         viewPager.setCurrentItem(tab.getPosition());
         if (tab.getPosition() == 0) {
-            // Toast.makeText(this, "" + stringProfileUrl + "  " + stringUserName, Toast.LENGTH_SHORT).show();
-
             new TabProfileFragment(mapUserData);
         } else if (tab.getPosition() == 1) {
             new TabRepositoryFragment(mapUserData);

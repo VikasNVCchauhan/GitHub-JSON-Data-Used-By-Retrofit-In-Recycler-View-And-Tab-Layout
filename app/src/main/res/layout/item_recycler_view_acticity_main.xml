@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linear_layout_recycler_view_item_activity_main"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="5dp"
-    android:layout_marginRight="5dp"
-    android:layout_marginTop="1dp"
-    android:layout_marginBottom="1dp"
-    android:elevation="2dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginBottom="5dp"
     android:background="@drawable/background_layout"
+    android:elevation="2dp"
     android:orientation="horizontal"
-    android:id="@+id/linear_layout_recycler_view_item_activity_main"
     android:padding="10dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
+        app:civ_border_width="1dp"
+        app:civ_border_color="@android:color/white"
         android:id="@+id/circle_image_view_user_profile_item_recycler_main"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -30,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Vikas chauhan"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="17sp"
             android:textStyle="bold" />
 
@@ -43,7 +46,8 @@
                 android:id="@+id/tv_no_of_repository_item_recycler_view_activity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Number Of Repo : " />
+                android:text="Number Of Repo : "
+                android:textColor="@color/textColorLightBlue" />
 
             <TextView
                 android:id="@+id/tv_repo_number_item_recycler_view_activity"
@@ -51,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5sp"
                 android:text="70"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="15sp"
                 android:textStyle="bold" />
         </LinearLayout>

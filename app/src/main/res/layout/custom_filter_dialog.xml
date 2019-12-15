@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="25dp"
+    android:layout_marginTop="25dp"
+    android:layout_marginRight="25dp"
+    android:layout_marginBottom="25dp"
+
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:paddingLeft="25dp"
+    android:paddingTop="20dp"
+    android:paddingRight="25dp"
+    android:paddingBottom="20dp">
+
+    <TextView
+        android:id="@+id/text_view_heading_filter_custom_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:text="SELECT  FILTER"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:id="@+id/linear_layout_list_view_filter_custom_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/list_view_custom_filter_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/relative_layout_dialog_options"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/relative_layout_dialog_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:id="@+id/text_view_cancel_custom_dialog_filter_repo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Cancel"
+                android:textColor="@color/orange"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/text_view_continue_custom_dialog_filter_repo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginRight="40dp"
+                android:layout_toLeftOf="@+id/text_view_cancel_custom_dialog_filter_repo"
+                android:text="Continue"
+                android:textColor="@color/orange"
+                android:textStyle="bold"></TextView>
+        </RelativeLayout>
+</LinearLayout>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -18,17 +19,19 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="5dp"
         android:id="@+id/recycler_view_git_all_user_activity_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/linear_layout_search_main" />
+        android:layout_below="@+id/linear_layout_search_main"
+        />
 
     <LinearLayout
-        android:gravity="center"
         android:id="@+id/progress_bar_activity_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:gravity="center"
         android:orientation="vertical"
         android:visibility="invisible">
 
@@ -37,11 +40,11 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:textStyle="italic"
+            android:textColor="@color/textColorLightBlue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10sp"
-            android:text="Data loading in progress..." />
-
+            android:text="Data loading in progress..."
+            android:textStyle="italic" />
     </LinearLayout>
 </RelativeLayout>

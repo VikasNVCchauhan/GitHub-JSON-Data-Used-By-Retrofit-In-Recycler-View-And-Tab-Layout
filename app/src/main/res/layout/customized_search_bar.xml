@@ -22,7 +22,6 @@
             android:layout_height="match_parent"
             android:background="@drawable/search_toolbar_background"
             android:drawableLeft="@drawable/ic_search_black_24dp"
-            android:focusable="true"
             android:hint="Search for Github Users "
             android:inputType="text"
             android:maxLines="1"

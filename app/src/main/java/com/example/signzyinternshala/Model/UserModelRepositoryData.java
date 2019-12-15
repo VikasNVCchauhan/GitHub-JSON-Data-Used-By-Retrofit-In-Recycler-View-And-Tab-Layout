@@ -1,6 +1,6 @@
 package com.example.signzyinternshala.Model;
 
-public class UserModelRepositoryData {
+public class UserModelRepositoryData implements Comparable<UserModelRepositoryData> {
     private String repositoryName, stringLanguage, stringScore, stringWatcherCount, stringOpenIssues, stringForkCount;
 
     public UserModelRepositoryData(String repositoryName, String stringLanguage, String stringScore, String stringWatcherCount, String stringOpenIssues, String stringForkCount) {
@@ -38,5 +38,34 @@ public class UserModelRepositoryData {
 
     public String getStringForkCount() {
         return stringForkCount;
+    }
+
+    public void setRepositoryName(String repositoryName) {
+        this.repositoryName = repositoryName;
+    }
+
+    public void setStringLanguage(String stringLanguage) {
+        this.stringLanguage = stringLanguage;
+    }
+
+    public void setStringScore(String stringScore) {
+        this.stringScore = stringScore;
+    }
+
+    public void setStringWatcherCount(String stringWatcherCount) {
+        this.stringWatcherCount = stringWatcherCount;
+    }
+
+    public void setStringOpenIssues(String stringOpenIssues) {
+        this.stringOpenIssues = stringOpenIssues;
+    }
+
+    public void setStringForkCount(String stringForkCount) {
+        this.stringForkCount = stringForkCount;
+    }
+
+    @Override
+    public int compareTo(UserModelRepositoryData o) {
+        return Integer.valueOf(this.getStringScore()).compareTo(Integer.valueOf(o.getStringScore()));
     }
 }

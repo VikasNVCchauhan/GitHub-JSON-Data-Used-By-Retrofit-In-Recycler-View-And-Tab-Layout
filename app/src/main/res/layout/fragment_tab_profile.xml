@@ -3,191 +3,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context=".TabPackeg.TabProfileFragment">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp">
+        android:orientation="vertical">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circle_image_view_profile_tab"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/women_horizontal_recycler_view" />
-
-        <TextView
-            android:id="@+id/tv_name_user_profile_tab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/circle_image_view_profile_tab"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10sp"
-            android:text="Vikas Chauhan"
-            android:textColor="@android:color/black"
-            android:textSize="17sp"
-            android:textStyle="bold" />
-
-        <!--    <LinearLayout-->
-        <!--        android:id="@+id/linear_layout_repo_count_profile_fragment_tab"-->
-        <!--        android:layout_width="match_parent"-->
-        <!--        android:layout_height="wrap_content"-->
-        <!--        android:layout_below="@+id/tv_name_user_profile_tab"-->
-        <!--        android:layout_marginTop="2dp"-->
-        <!--        android:gravity="center"-->
-        <!--        android:orientation="horizontal">-->
-
-        <!--        <TextView-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="Repository Count : " />-->
-
-        <!--        <TextView-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginLeft="5sp"-->
-        <!--            android:text="59"-->
-        <!--            android:textColor="@android:color/black"-->
-        <!--            android:textStyle="bold" />-->
-        <!--    </LinearLayout>-->
+        <include layout="@layout/item_profile_profile_tab_fragment" />
 
         <RelativeLayout
-            android:id="@+id/linear_layout_view_profile_tab"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_name_user_profile_tab"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
-            <View
-                android:layout_width="100dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="10dp"
-                android:layout_toRightOf="@+id/text_view_other_details"
-                android:background="@color/colorSilver" />
+            <RelativeLayout
+                android:id="@+id/relative_layout_recycler_detail_profile_tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-            <TextView
-                android:id="@+id/text_view_other_details"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginBottom="10sp"
+                    android:text="Repositories"
+                    android:textColor="@color/textColorLightBlue"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/text_view_view_more_profile_tab_fragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10sp"
+                    android:layout_centerVertical="true"
+                    android:text="For More Slide Right"
+                    android:textColor="@color/orange"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_below="@+id/relative_layout_recycler_detail_profile_tab"
+                android:id="@+id/recycler_view_profile_tab_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <LinearLayout
+                android:id="@+id/linear_layout_progress_bar_tab_profile_fragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:text="Other Details"
-                android:textSize="13sp" />
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <View
-                android:layout_width="100dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="10dp"
-                android:layout_toLeftOf="@+id/text_view_other_details"
-                android:background="@color/colorSilver" />
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="loading In Progress..."
+                    android:textColor="@color/textColorLightBlue"
+                    android:textSize="13sp"
+                    android:textStyle="italic" />
+            </LinearLayout>
         </RelativeLayout>
-
-        <LinearLayout
-            android:id="@+id/linear_layout_other_detail1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/linear_layout_view_profile_tab"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:weightSum="3">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Followers" />
-
-                <TextView
-                    android:id="@+id/text_view_follower_count_profile_tab"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="200"
-                    android:textColor="@android:color/black"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    android:visibility="gone" />
-
-                <ProgressBar
-                    android:id="@+id/progress_bar_follower_fragment_tab_profile"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_marginTop="5dp"
-                    android:indeterminateDrawable="@drawable/progress_bar" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Subscription" />
-
-                <TextView
-                    android:visibility="gone"
-                    android:id="@+id/text_view_following_count_profile_tab"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="50"
-                    android:textColor="@android:color/black"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-                <ProgressBar
-                    android:id="@+id/progress_bar_followings_fragment_tab_profile"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_marginTop="5dp"
-                    android:indeterminateDrawable="@drawable/progress_bar" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Repositories" />
-
-                <TextView
-                    android:visibility="gone"
-                    android:id="@+id/text_view_repository_count_profile_tab"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="30"
-                    android:textColor="@android:color/black"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-                <ProgressBar
-                    android:id="@+id/progress_bar_repo_count_fragment_tab_profile"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_marginTop="5dp"
-                    android:indeterminateDrawable="@drawable/progress_bar" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
+    </LinearLayout>
 </FrameLayout>
